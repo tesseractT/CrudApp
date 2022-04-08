@@ -12,9 +12,13 @@ namespace CrudWebApp.Models
 
         public string Last_Name { get; set; }
 
-        public string Date_Of_Birth { get; set; }
+        
+        public DateTime Date_Of_Birth { get; set; }
 
-        public string Age { get; set; }
+        
+        public int Age { get; set; }
+        
+
 
         public int DisplayOrder { get; set; }
 
