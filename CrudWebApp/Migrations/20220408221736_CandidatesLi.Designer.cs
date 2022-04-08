@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrudWebApp.Migrations
 {
     [DbContext(typeof(CrudDbContext))]
-    [Migration("20220407193917_AddCandidateToDatabase")]
-    partial class AddCandidateToDatabase
+    [Migration("20220408221736_CandidatesLi")]
+    partial class CandidatesLi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -24,7 +24,7 @@ namespace CrudWebApp.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("CrudWebApp.Models.Candidates", b =>
+            modelBuilder.Entity("CrudWebApp.Models.CandidatesLi", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,19 +32,14 @@ namespace CrudWebApp.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Age")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
+                    b.Property<int>("Age")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("Date_Of_Birth")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("DisplayOrder")
-                        .HasColumnType("int");
+                    b.Property<DateTime>("Date_Of_Birth")
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("First_Name")
                         .IsRequired()

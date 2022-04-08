@@ -1,4 +1,4 @@
-﻿@model Candidates
+﻿@model CandidatesLi
 
 <form method="post">
     <div class="border p-3 mt-4">
@@ -11,11 +11,13 @@
         <div class="mb-3">
             <label asp-for="First_Name"> First Name</label>
             <input asp-for="First_Name" class= "form-control"/>
+            <span asp-validation-for="First_Name" class="text-danger"></span>
         </div>
 
         <div class="mb-3">
             <label asp-for="Last_Name"> Last Name</label>
             <input asp-for="Last_Name" class="form-control" />
+            <span asp-validation-for="Last_Name" class="text-danger">Please input your Last Name</span>
         </div>
         
 
@@ -24,18 +26,20 @@
             <input asp-for="Date_Of_Birth" asp-format="{0:yyyy-MM-dd}"
                    class="form-control" placeholder="YYYY-MM-DD" type="text" />
                                                            @*add type="text"*@
+            <span asp-validation-for="Date_Of_Birth" class="text-danger"></span>
           </div>
 
         <div class="mb-3">
             <label asp-for="Age">Age </label>
-            <input type="text" id="age" asp-for="Age" disabled="disabled" class="form-control" />
+            <input type="text" id="age" asp-for="Age" readonly="readonly" class="form-control" />
         </div>
        
-        <div class="form-group row">
-            <div class="offset-sm-2 col-sm-6">
-                <input type="submit" value="Update" class="btn btn-primary" />
-            </div>
+        <div>
+            <button type="submit" class="btn btn-primary" style="width:150px">ADD</button>
+            <a asp-controller="Candidate" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to Lists</a>
         </div>
+
+
         @if (ViewData["Message"] != null)
         {
             <div class="form-group row">
@@ -63,7 +67,7 @@
                 .datepicker({   
                     format: 'yyyy-MM-DD',
                     maxDate: '+0d',
-                    yearRange: '1950:2025',
+                    yearRange: '1900:2025',
                     changeMonth: true,
                     changeYear: true,
                     onSelect: function (value, ui) {
@@ -77,8 +81,11 @@
         })
 
     </script>
-}
-    
 
+    
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
     
+}

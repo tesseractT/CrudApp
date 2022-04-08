@@ -15,7 +15,7 @@ namespace CrudWebApp.Controllers
 
         public IActionResult Index()
         {
-            IEnumerable<Candidates> objCandidateList = _db.CandidateInfo;
+            IEnumerable<CandidatesLi> objCandidateList = _db.CandidateInfo;
             return View(objCandidateList);
         }
 
@@ -26,6 +26,21 @@ namespace CrudWebApp.Controllers
         {
 
             return View();
+        }
+        //POST
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Add(CandidatesLi obj)
+        {
+            if(ModelState.IsValid)
+            {
+                _db.CandidateInfo.Add(obj);
+                _db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            return View(obj);
+            
         }
 
 
