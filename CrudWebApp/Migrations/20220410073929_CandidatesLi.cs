@@ -19,6 +19,9 @@ namespace CrudWebApp.Migrations
                     Last_Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Date_Of_Birth = table.Column<DateTime>(type: "datetime2", nullable: false),
                     Age = table.Column<int>(type: "int", nullable: false),
+                    Weight = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Height = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Hair_Colour = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     CreatedDateTime = table.Column<DateTime>(type: "datetime2", nullable: false)
                 },
                 constraints: table =>

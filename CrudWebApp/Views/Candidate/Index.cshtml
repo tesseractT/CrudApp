@@ -3,6 +3,7 @@
     ViewData["Title"] = "Index";
 }
 
+
 <div class="container p-3" >
     <div class="row">
         <div class="col-6">
@@ -33,6 +34,16 @@
             <th>
                 Age
             </th>
+            <th>
+                Weight
+            </th>
+            <th>
+                Height
+            </th>
+            <th>
+                Hair Colour
+            </th>
+            <th></th>
             
         </tr>
     </thead>
@@ -52,7 +63,27 @@
         </td>
         <td width="10%">
             @obj.Age
+            </td>
+            <td width="30%">
+            @obj.Weight
+        </td>
+        <td width="30%">
+            @obj.Height
+        </td>
+        <td width="30%">
+            @obj.Hair_Colour
+        </td>
+            <td>
+                <div class="w-75 btn-group" role="group">
+                    <a asp-controller="Candidate" asp-action="Edit" asp-route-id="@obj.Id"
+                    class="btn btn-primary mx-2"><i class="bi bi-pencil-square"></i>Edit</a>
+                    <a asp-controller="Candidate" asp-action="Delete" asp-route-id="@obj.Id"
+                    class="btn btn-danger mx-2"><i class="bi bi-trash-fill"></i>Delete</a>
+
+                </div>
+            </td>
         </tr>
+
 }
 
 </tbody>

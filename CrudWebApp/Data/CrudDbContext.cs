@@ -1,4 +1,5 @@
-﻿using CrudWebApp.Models;
+﻿using System;
+using CrudWebApp.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace CrudWebApp.Data

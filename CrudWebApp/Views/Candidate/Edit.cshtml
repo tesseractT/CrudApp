@@ -1,10 +1,10 @@
 ﻿@model CandidatesLi
 
-<form method="post">
+<form method="post" asp-action="Edit">
     <div class="border p-3 mt-4">
         <div class="row pb-2">
             <h2 class="text-primary">
-                Add Candidate
+                Edit Candidate
             </h2>
             <hr />
         </div>
@@ -48,11 +48,9 @@
             <label asp-for="Hair_Colour">Hair Colour </label>
             <input type="text" id="colour" asp-for="Hair_Colour"  class="form-control" />
         </div>
-
-        
        
         <div>
-            <button type="submit" class="btn btn-primary" style="width:150px">ADD</button>
+            <button type="submit" class="btn btn-primary" style="width:150px">UPDATE</button>
             <a asp-controller="Candidate" asp-action="Index" class="btn btn-secondary" style="width:150px">Back to Lists</a>
         </div>
 

@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CrudWebApp.Migrations
 {
     [DbContext(typeof(CrudDbContext))]
-    [Migration("20220408221736_CandidatesLi")]
+    [Migration("20220410073929_CandidatesLi")]
     partial class CandidatesLi
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -45,7 +45,19 @@ namespace CrudWebApp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Hair_Colour")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Height")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Last_Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Weight")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
